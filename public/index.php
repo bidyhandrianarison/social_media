@@ -15,11 +15,12 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="/public/assets/css/bootstrap-icons.css">
     <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css">
-
+    <script src="/public/assets/js/Helpers/getInitials.js" defer></script>
     <script src="/public/assets/js/jquery-3.7.1.min.js"></script>
     <script type='module' src="/public/assets/js/home.js" defer></script>
     <script type="module" src="/public/assets/js/Posts/create.js" defer></script>
     <!-- <script src="/public/assets/js/posts.js"></script> -->
+     
 </head>
 <body class="bg-gray-100 font-sans">
     <div id="logout" class="!bg-[#091057] w-screen p-5 flex flex-row justify-between">
@@ -29,8 +30,11 @@ if (session_status() === PHP_SESSION_NONE) {
             </div>
             <input class="outline-none" type="text" placeholder="Rechercher...">
         </div>
-        <form action="/src/Views/auth/logout.php" method="post">
-            <button type="submit" class="  p-2 rounded-lg text-[#f2f8fc]" name="logout">Se deconnecter</button>
+
+        <form class="flex gap-2 items-center" action="/src/Views/auth/logout.php" method="post">
+            <div id="user" class="bg-[#EC8305] h-max w-max p-2 rounded-full">
+            </div>
+            <button type="submit" class="  p-2 rounded-lg text-[#f2f8fc]" name="logout">Se deconnecter</butto>
         </form>
     </div>
 <div id="main">
@@ -60,6 +64,7 @@ window.userSession = <?php
     echo json_encode(['fullName' => $_SESSION['lastName'] . ' ' . $_SESSION['firstName'],
         'email' => $_SESSION['email'], 'idAccount' => $_SESSION['id_account']]); 
 ?>
+
 </script>
 </body>
 </html>
