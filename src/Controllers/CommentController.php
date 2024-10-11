@@ -1,6 +1,5 @@
-
 <?php
-include_once __DIR__.'/../Models/Comment.php';
+include_once __DIR__ . '/../Models/Comment.php';
 
 class CommentController {
     private $conn;
@@ -18,15 +17,9 @@ class CommentController {
     public function createComment($post_id, $author_id, $content) {
         $this->comment->addComment($post_id, $author_id, $content);
     }
-    public function deleteComment($id){
+
+    public function deleteComment($id) {
         $this->comment->deleteByID($id);
     }
-    public function getCommentById($id){
-      return  $this->comment->getById($id);
-    }
-    public function editComs($id,$content){
-        $this->comment->editById($id, $content);
-        header('Location: /src/Views/posts/list.php');
-        exit();
-    }
 }
+?>

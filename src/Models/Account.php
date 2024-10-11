@@ -3,23 +3,21 @@ class Account {
     private $conn;
     private $table_name = "account";
 
-    //METHOD
     public function __construct($db) {
         $this->conn = $db;
     }
-    public function getUserByEmail($email){
-        $sql = "SELECT * FROM ". $this->table_name . " WHERE email = ?";
-        $result = $this->conn->prepare($sql);
-        $result->execute([$email]);
-        $data = $result->fetch(PDO::FETCH_ASSOC);
-        return $data;
+
+    public function createUser($firstName, $lastName, $email, $password) {
+        $query = "INSERT INTO " . $this->table_name . " (nom, prenom, email, mdp) VALUES (?, ?, ?, ?)";
+        $stmt = $this->conn->prepare($query);
+        return $stmt->execute([$firstName, $lastName, $email, $password]);
     }
-    public function createUser($firstName, $lastName, $email, $password){
-        $sql = "INSERT INTO ". $this->table_name ."(nom, prenom, email, mdp) VALUES (?, ?, ?, ?)";
-        $result = $this->conn->prepare($sql);
-        $result->execute([$firstName, $lastName, $email,$password]);
-        $data = $result -> fetch(PDO::FETCH_ASSOC);
-        return $data;
+
+    public function getUserByEmail($email) {
+        $query = "SELECT * FROM " . $this->table_name . " WHERE email = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute([$email]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     public function getInitials($firstName, $lastName){
         $name= $firstName ." ". $lastName;

@@ -29,8 +29,6 @@ class PostController {
     }
     public function editPost($id,$content){
         $this->post->editById($id, $content);
-        header('Location: /src/Views/posts/list.php');
-        exit();
     }
 
 }

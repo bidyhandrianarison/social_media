@@ -1,4 +1,4 @@
-<?php
+<?php /*
 include_once __DIR__ . '/../../../config/database.php';
 include_once(__DIR__ . '/../../Controllers/CommentController.php');
 include_once(__DIR__ . '/../../Controllers/AuthController.php');
@@ -29,5 +29,5 @@ if (isset($_POST['id_coms']) && isset($_POST['coms'])) {
     $commentController->editComs($_POST['id_coms'], $_POST['coms']);
     header('Location: /src/Views/posts/list.php');
     exit();
-}
+}*/
 ?>

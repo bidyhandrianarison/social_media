@@ -9,7 +9,6 @@ $db = $database->getConnection();
 $authController = new AuthController($db);
 $postController = new PostController($db);
 $reactionController = new ReactionController($db);
-// $basicOptions = ['commenter', 'reagir'];
 $reactions = ['Love', 'Like', 'Haha', 'Grr'];
 $VIPoptions = ['supprimer', 'modifier'];
 

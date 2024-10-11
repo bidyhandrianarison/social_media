@@ -8,13 +8,7 @@ class Comment extends Card {
         $this->id="id_comment";
     }
 
-    // public function getCommentsByPost($post_id) {
-    //     $query = "SELECT * FROM " . $this->table_name . " JOIN account ON account.id = comments.id_account  WHERE id_post = ?";
-    //     $stmt = $this->conn->prepare($query);
-    //     $stmt->execute([$post_id]);
-    //     return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    // }
-
+  
     public function addComment($post_id, $author_id, $content) {
         $query = "INSERT INTO " . $this->table_name . " (id_post, id_account, content) VALUES (?, ?, ?)";
         $stmt = $this->conn->prepare($query);

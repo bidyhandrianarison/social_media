@@ -6,28 +6,11 @@ $database = new Database();
 $db = $database->getConnection();
 $postController = new PostController($db);
 
-if (isset($_POST['id_pub'])) {
-    $pub = $postController->getPostById($_POST['id_pub'])
 ?>
 
-    <head>
-        <link rel="stylesheet" href="../../../output.css">
-    </head>
-    <div class="flex flex-col items-center justify-center ">
-        <div class="p-5 shadow-2xl border-black w-1/2 rounded-lg">
-            <form class="flex flex-col" method="post">
-                <div><?php echo '<span class=" font-bold text-2xl">' . $_SESSION['firstName']  . ', Que voulez-vous publiez...</span>' ?></div>
-                <input type="text" name="id_pub" value="<?php echo $_POST['id_pub'] ?>" hidden>
-                <textarea class="!outline-none" name="pub" id="" placeholder="<?php echo $pub['content'] ?>"></textarea>
-                <button type="submit" name="options" value="modifier" class="!bg-blue-600 w-max p-2 rounded-lg text-xl text-[#fcf2f8] shadow-lg">Modifier</button>
-            </form>
-        </div>
-    </div>
+   
 <?php
-}
-if (isset($_POST['id_pub']) && isset($_POST['pub'])) {
-    $postController->editPost($_POST['id_pub'], $_POST['pub']);
-    header('Location: /src/Views/posts/list.php');
-    exit();
-}
+
+    $postController->editPost($_POST['idPost'], $_POST['content']);
+    
 ?>

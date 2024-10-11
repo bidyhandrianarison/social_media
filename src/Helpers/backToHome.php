@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/public/assets/css/output.css">
-   <div class="w-max h-max p-2">
+   <div class="w-full h-max p-2 flex justify-center">
         <form method="post" >
-            <button name='back' value='back' class="!bg-green-200 font-bold" type="submit">Retour</button>
+            <button name='back' value='back' class=" font-bold" type="submit">Retour</button>
         </form>
     </div>
     <?php
