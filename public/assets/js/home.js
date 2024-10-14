@@ -29,7 +29,7 @@ export function loadMainContent() {
 /*========================= MENU ========================= */
                 if(post.id_account == window.userSession.idAccount){  
                 let menuContainer = document.createElement('div');
-                menuContainer.classList="relative  "
+                menuContainer.classList="relative"
                 let menu=document.createElement("div");
                 menu.innerText='...'
                 menu.classList="menu relative w-max right-0 font-bold text-xl cursor-pointer";

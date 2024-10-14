@@ -13,10 +13,10 @@ export function showUpdateForm(post){
     buttons.classList="flex gap-2";
     let edit=document.createElement('button');
     edit.textContent="Modifier";
-    edit.classList="bg-[#091057] w-max  p-2 rounded-lg font-bold text-lg text-[#fcf2f8] shadow-lg";
+    edit.classList="bg-[#091057] w-max cursor-pointer p-2 rounded-lg font-bold text-lg text-[#fcf2f8] shadow-lg";
     let cancelButton=document.createElement("button");
     cancelButton.textContent="Annuler";
-    cancelButton.classList="w-max text-[#091057] text-white p-2 rounded-lg  text-lg shadow-lg";
+    cancelButton.classList="w-max cursor-pointer text-[#091057] p-2 rounded-lg  text-lg shadow-lg";
     buttons.append(edit,cancelButton)
     buttons.classList="flex gap-5"
     div.append(name,textArea,buttons);
@@ -26,7 +26,11 @@ export function showUpdateForm(post){
     edit.addEventListener('click',()=>{
         update(post);
         document.getElementById("main").classList.remove('hidden');
-
+    })
+    cancelButton.addEventListener('click',()=>{
+        $('#updateForm').html("");
+        loadMainContent();
+        document.getElementById("main").classList.remove('hidden');
 
     })
 }
