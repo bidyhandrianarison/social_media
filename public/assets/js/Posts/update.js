@@ -13,8 +13,12 @@ export function showUpdateForm(post){
     buttons.classList="flex gap-2";
     let edit=document.createElement('button');
     edit.textContent="Modifier";
-    edit.classList="bg-blue-600 w-max  p-2 rounded-lg font-bold text-lg text-[#fcf2f8] shadow-lg";
-    buttons.append(edit)
+    edit.classList="bg-[#091057] w-max  p-2 rounded-lg font-bold text-lg text-[#fcf2f8] shadow-lg";
+    let cancelButton=document.createElement("button");
+    cancelButton.textContent="Annuler";
+    cancelButton.classList="w-max text-[#091057] text-white p-2 rounded-lg  text-lg shadow-lg";
+    buttons.append(edit,cancelButton)
+    buttons.classList="flex gap-5"
     div.append(name,textArea,buttons);
     loadComment(post.id_post,div)
     $('#updateForm').append(div);

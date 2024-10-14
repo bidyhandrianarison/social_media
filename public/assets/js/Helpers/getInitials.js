@@ -11,3 +11,10 @@ function userInitial(name){
     user.textContent=getInitials(name);
 
 }
+document.addEventListener('DOMContentLoaded',()=>{
+    let userName=window.userSession.fullName;
+    userInitial(userName)
+})
+document.getElementById("user").addEventListener('click',()=>{
+    document.getElementById("logoutButton").classList.toggle('hidden');
+})

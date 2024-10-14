@@ -31,10 +31,10 @@ if (session_status() === PHP_SESSION_NONE) {
             <input class="outline-none" type="text" placeholder="Rechercher...">
         </div>
 
-        <form class="flex gap-2 items-center" action="/src/Views/auth/logout.php" method="post">
-            <div id="user" class="bg-[#EC8305] h-max w-max p-2 rounded-full">
+        <form class="relative items-center" action="/src/Views/auth/logout.php" method="post">
+            <div id="user" class=" select-none relative cursor-pointer bg-[#EC8305] h-max w-max p-2 rounded-full">
             </div>
-            <button type="submit" class="  p-2 rounded-lg text-[#f2f8fc]" name="logout">Se deconnecter</butto>
+            <button type="submit" id="logoutButton" class="bg-white hidden w-max absolute top-0 right-10 p-2 rounded-lg !text-[#091057]" name="logout">Se deconnecter</butto>
         </form>
     </div>
 <div id="main">
